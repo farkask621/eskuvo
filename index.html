@@ -104,21 +104,27 @@
             display: flex;
             justify-content: center;
             align-items: flex-start;
-            gap: 10px;
+            gap: clamp(4px, 2vw, 16px);
+            padding: 0 12px;
+            max-width: 500px;
+            margin: 0 auto;
         }
 
         .countdown-unit {
             display: flex;
             flex-direction: column;
             align-items: center;
+            flex: 1;
+            min-width: 0;
+            max-width: 100px;
         }
 
         /* ── Roller card ── */
         .roller-card {
-            width: 82px;
-            height: 80px;
+            width: 100%;
+            aspect-ratio: 1 / 0.95;
             background: #f5f2ed;
-            border-radius: 10px;
+            border-radius: clamp(6px, 2vw, 12px);
             overflow: hidden;
             position: relative;
             box-shadow: 0 1px 3px rgba(0,0,0,0.04);
@@ -148,9 +154,8 @@
 
         .roller-number {
             font-family: 'DM Serif Display', Georgia, serif;
-            font-size: 2.8rem;
+            font-size: clamp(1.6rem, 7vw, 3.6rem);
             font-weight: 400;
-            line-height: 80px;
             color: #2a2a2a;
             font-variant-numeric: tabular-nums;
             font-feature-settings: "tnum";
@@ -159,21 +164,22 @@
 
         .countdown-label {
             font-family: 'Playfair Display', Georgia, serif;
-            font-size: 0.6rem;
+            font-size: clamp(0.5rem, 1.5vw, 0.65rem);
             font-weight: 400;
             text-transform: uppercase;
-            letter-spacing: 2.5px;
+            letter-spacing: 2px;
             color: #aaa;
-            margin-top: 10px;
+            margin-top: 8px;
         }
 
         .countdown-colon {
             font-family: 'DM Serif Display', Georgia, serif;
-            font-size: 1.4rem;
+            font-size: clamp(1rem, 3vw, 1.8rem);
             font-weight: 400;
             color: #c9b99a;
-            padding-top: 28px;
+            padding-top: clamp(16px, 5vw, 34px);
             user-select: none;
+            flex-shrink: 0;
         }
 
         /* After wedding */
@@ -206,44 +212,7 @@
             letter-spacing: 1px;
         }
 
-        /* ── Responsive ── */
-        @media (max-width: 400px) {
-            .roller-card {
-                width: 66px;
-                height: 66px;
-                border-radius: 8px;
-            }
-            .roller-number {
-                font-size: 2.2rem;
-                line-height: 66px;
-            }
-            .countdown-grid {
-                gap: 6px;
-            }
-            .countdown-colon {
-                font-size: 1.1rem;
-                padding-top: 22px;
-            }
-        }
-
-        @media (min-width: 601px) {
-            .roller-card {
-                width: 100px;
-                height: 96px;
-                border-radius: 12px;
-            }
-            .roller-number {
-                font-size: 3.6rem;
-                line-height: 96px;
-            }
-            .countdown-grid {
-                gap: 16px;
-            }
-            .countdown-colon {
-                font-size: 1.8rem;
-                padding-top: 34px;
-            }
-        }
+        /* ── Responsive — countdown scales via clamp(), only edge cases here ── */
     </style>
 </head>
 <body>
