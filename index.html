@@ -29,20 +29,15 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Fixed geometric pattern background */
+        /* Fixed geometric pattern background — SVG herringbone */
         body::before {
             content: '';
             position: fixed;
             inset: 0;
             z-index: -1;
-            background-color: #e5dfd6;
-            background-image:
-                /* Subtle diamond grid */
-                linear-gradient(45deg, rgba(205,195,180,0.4) 1px, transparent 1px),
-                linear-gradient(-45deg, rgba(205,195,180,0.4) 1px, transparent 1px),
-                /* Soft center glow so the magazine area feels lighter */
-                radial-gradient(ellipse at 50% 40%, rgba(250,248,245,0.5) 0%, transparent 60%);
-            background-size: 32px 32px, 32px 32px, 100% 100%;
+            background-color: #ddd6ca;
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 20 L20 0 L40 20 L20 40 Z' fill='none' stroke='%23c4b9a8' stroke-width='0.6'/%3E%3C/svg%3E");
+            background-size: 40px 40px;
         }
 
         .magazine {
