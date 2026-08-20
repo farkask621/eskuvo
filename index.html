@@ -22,22 +22,21 @@
         }
 
         body {
-            background-color: #e5dfd6;
+            background-color: #f0f0f0;
             font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
             color: #2a2a2a;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Fixed geometric pattern background — SVG herringbone */
+        /* Fixed plaster texture background */
         body::before {
             content: '';
             position: fixed;
             inset: 0;
             z-index: -1;
-            background-color: #ddd6ca;
-            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 20 L20 0 L40 20 L20 40 Z' fill='none' stroke='%23c4b9a8' stroke-width='0.6'/%3E%3C/svg%3E");
-            background-size: 40px 40px;
+            background: #f0f0f0 url('images/bg-texture.jpg') center / cover no-repeat;
+            background-attachment: fixed;
         }
 
         .magazine {
