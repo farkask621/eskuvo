@@ -22,15 +22,27 @@
         }
 
         body {
-            background: #e8e2d9;
-            background-image:
-                radial-gradient(ellipse at 50% 0%, rgba(250,248,245,0.7) 0%, transparent 70%),
-                radial-gradient(ellipse at 50% 100%, rgba(250,248,245,0.4) 0%, transparent 60%);
-            background-attachment: fixed;
+            background-color: #e5dfd6;
             font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
             color: #2a2a2a;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
+        }
+
+        /* Fixed geometric pattern background */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background-color: #e5dfd6;
+            background-image:
+                /* Subtle diamond grid */
+                linear-gradient(45deg, rgba(205,195,180,0.4) 1px, transparent 1px),
+                linear-gradient(-45deg, rgba(205,195,180,0.4) 1px, transparent 1px),
+                /* Soft center glow so the magazine area feels lighter */
+                radial-gradient(ellipse at 50% 40%, rgba(250,248,245,0.5) 0%, transparent 60%);
+            background-size: 32px 32px, 32px 32px, 100% 100%;
         }
 
         .magazine {
